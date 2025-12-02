@@ -336,13 +336,13 @@
 
         .btn-outline {
             background: transparent;
-            color: var(--text-white);
-            border: 2px solid var(--text-white);
+            color: var(--text-primary);
+            border: 2px solid var(--text-primary);
         }
 
         .btn-outline:hover {
-            background: var(--text-white);
-            color: var(--primary-color);
+            background: var(--text-primary);
+            color: var(--bg-primary);
         }
 
         /* Responsive Typography */
@@ -1853,7 +1853,6 @@
         /* Resume CTA */
         #resume {
             background: var(--bg-primary);
-            color: #fff;
         }
 
         .resume-container {
@@ -1869,6 +1868,7 @@
             margin-bottom: var(--spacing-lg);
             text-align: center;
             position: relative;
+            color: var(--text-heading);
         }
 
         .resume-title::after {
@@ -1886,6 +1886,7 @@
         .resume-sub {
             opacity: 0.9;
             margin-bottom: var(--spacing-sm);
+            color: var(--text-secondary);
         }
 
         .resume-actions {
@@ -1911,6 +1912,24 @@
         }
 
         .btn-light:active {
+            transform: translateY(0);
+        }
+
+        .btn-outline-resume {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .btn-outline-resume:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-outline-resume:active {
             transform: translateY(0);
         }
 
@@ -2435,7 +2454,7 @@
             <p class="resume-sub">Download a concise PDF with projects, skills, and experience.</p>
             <div class="resume-actions">
                 <a href="#" class="btn btn-light" download>Download PDF</a>
-                <a href="#contact" class="btn btn-outline">Hire Me</a>
+                <a href="#contact" class="btn btn-outline btn-outline-resume">Hire Me</a>
             </div>
         </div>
     </section>
