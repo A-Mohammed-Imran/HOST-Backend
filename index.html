@@ -7,6 +7,11 @@
     <title>Mohammed Imran | Portfolio</title>
     <meta name="description" content="Portfolio of Mohammed Imran - Computer Science Student & Web Developer">
 
+    <!-- Font Awesome v6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
         /* ===== CSS RESET & BASE STYLES ===== */
         * {
@@ -1747,7 +1752,7 @@
 
         /* Certifications */
         #certificates {
-            background: var(--bg-primary);
+            background: var(--bg-secondary);
         }
 
         .cert-container {
@@ -1789,6 +1794,24 @@
             color: var(--primary-color);
             font-weight: 600;
             font-size: var(--font-size-sm);
+        }
+
+        .cert-button {
+            display: inline-block;
+            margin-top: var(--spacing-sm);
+            padding: 8px 16px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #ffffff;
+            border-radius: 8px;
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .cert-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
         }
 
         /* Testimonials */
@@ -2353,21 +2376,30 @@
         </div>
     </section>
 
-    <!-- ===== CERTIFICATIONS SECTION ===== -->
+    <!-- ===== CERTIFICATIONS SECTION ===== --> 
     <section id="certificates" class="section">
         <div class="cert-container">
             <h2 class="section-title">Certifications</h2>
             <div class="cert-grid">
                 <div class="cert-card">
+                    <div class="cert-title">Intern - Aspirasys</div>
+                    <div class="cert-issuer">1 Month</div>
+                    <div class="cert-issuer">Web-Development with AI tools</div>
+                    <a href="#" class="cert-button" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </div>
+                <div class="cert-card">
                     <div class="cert-title">MUC-Techno 2K25 </div>
                     <div class="cert-issuer">Inter College Competition</div>
                     <div class="cert-issuer">Web-Deveopnment - 1st</div>
+                    <a href="#" class="cert-button" target="_blank" rel="noopener noreferrer">View Certificate</a>
                 </div>
                 <div class="cert-card">
                     <div class="cert-title">Nuronex 2K25</div>
                     <div class="cert-issuer">Inter College Competition</div>
                     <div class="cert-issuer">Web-Deveopnment - 2dn</div>
+                    <a href="#" class="cert-button" target="_blank" rel="noopener noreferrer">View Certificate</a>
                 </div>
+                
             </div>
         </div>
     </section>
@@ -2419,36 +2451,49 @@
             <div class="contact-content">
                 <!-- Contact Information -->
                 <div class="contact-info">
-                    <div class="contact-info-card">
-                        <div class="info-icon">📧</div>
+                    <a href="mailto:mohammedimranat@gmail.com" class="contact-info-card"
+                        aria-label="Send email to mohammedimranat@gmail.com">
+                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
                         <h3 class="info-title">Email</h3>
                         <p class="info-text">
-                            <a href="mailto:mohammedimran@example.com" class="info-link">mohammedimranat@gmail.com</a>
+                            <span class="info-link">mohammedimranat@gmail.com</span>
                         </p>
-                    </div>
+                    </a>
 
-                    <div class="contact-info-card">
-                        <div class="info-icon">📱</div>
+
+
+                    <a href="tel:+917418927831" class="contact-info-card" aria-label="Call +91 74189 27831">
+                        <div class="info-icon"><i class="fas fa-phone"></i></div>
                         <h3 class="info-title">Phone</h3>
                         <p class="info-text">
-                            <a href="tel:+91 74189 27831" class="info-link">+91 74189 27831</a>
+                            <span class="info-link">+91 74189 27831</span>
                         </p>
-                    </div>
+                    </a>
 
-                    <div class="contact-info-card">
-                        <div class="info-icon">📍</div>
+                    <a href="https://www.google.com/maps/search/+Rahamathabad,+5th+Street,+PBT,+Vellore,+Tamil+Nadu" target="_blank"
+                        rel="noopener noreferrer" class="contact-info-card"
+                        aria-label="View 22/16 Rahamathabad, 5th Street, PBT, VLR, TN on Google Maps">
+                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <h3 class="info-title">Location</h3>
-                        <p class="info-text">Vellore, Tamil Nadu, India</p>
-                    </div>
+                        <p class="info-text">22/16 Rahamathabad, 5th Street, PBT, VLR, TN</p>
+                    </a>
 
                     <div class="contact-info-card">
-                        <div class="info-icon">🌐</div>
+                        <div class="info-icon"><i class="fas fa-share-alt"></i></div>
                         <h3 class="info-title">Follow Me</h3>
                         <div class="social-links">
-                            <a href="#" class="social-link" title="GitHub" aria-label="GitHub">💻</a>
-                            <a href="#" class="social-link" title="LinkedIn" aria-label="LinkedIn">💼</a>
-                            <a href="#" class="social-link" title="Twitter" aria-label="Twitter">🐦</a>
-                            <a href="#" class="social-link" title="Instagram" aria-label="Instagram">📷</a>
+                            <a href="https://github.com/A-Mohammed-Imran" target="_blank" rel="noopener noreferrer"
+                                class="social-link" title="GitHub" aria-label="Visit my GitHub profile"><i
+                                    class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/mohammed-imran-a-02594b343" target="_blank"
+                                rel="noopener noreferrer" class="social-link" title="LinkedIn"
+                                aria-label="Visit my LinkedIn profile"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://twitter.com/atimran2006" target="_blank" rel="noopener noreferrer"
+                                class="social-link" title="X (Twitter)" aria-label="Visit my X profile"><i
+                                    class="fab fa-x-twitter"></i></a>
+                            <a href="https://wa.me/917418927831" target="_blank" rel="noopener noreferrer"
+                                class="social-link" title="WhatsApp" aria-label="Contact me on WhatsApp"><i
+                                    class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
@@ -2507,10 +2552,18 @@
                         functional web experiences. Always learning, always building.
                     </p>
                     <div class="footer-social">
-                        <a href="#" class="footer-social-link" aria-label="GitHub" title="GitHub">💻</a>
-                        <a href="#" class="footer-social-link" aria-label="LinkedIn" title="LinkedIn">💼</a>
-                        <a href="#" class="footer-social-link" aria-label="Twitter" title="Twitter">🐦</a>
-                        <a href="#" class="footer-social-link" aria-label="Instagram" title="Instagram">📷</a>
+                        <a href="https://github.com/A-Mohammed-Imran" target="_blank" rel="noopener noreferrer"
+                            class="footer-social-link" aria-label="Visit my GitHub profile" title="GitHub"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/mohammed-imran-a-02594b343" target="_blank"
+                            rel="noopener noreferrer" class="footer-social-link" aria-label="Visit my LinkedIn profile"
+                            title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/atimran2006" target="_blank" rel="noopener noreferrer"
+                            class="footer-social-link" aria-label="Visit my X profile" title="X (Twitter)"><i
+                                class="fab fa-x-twitter"></i></a>
+                        <a href="https://wa.me/917418927831" target="_blank" rel="noopener noreferrer"
+                            class="footer-social-link" aria-label="Contact me on WhatsApp" title="WhatsApp"><i
+                                class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
 
@@ -2543,7 +2596,7 @@
                         <a href="mailto:mohammedimran@example.com" class="footer-link">Email Me</a>
                         <a href="tel:+1234567890" class="footer-link">Call Me</a>
                         <a href="#contact" class="footer-link">Contact Form</a>
-                        <span class="footer-link" style="cursor: default;">Vellore, India</span>
+                        <span class="footer-link" style="cursor: default;">22/16 Rahamathabad, 5th Street, PBT, VLR, TN</span>
                     </div>
                 </div>
             </div>
