@@ -1829,7 +1829,7 @@
 
         /* Resume CTA */
         #resume {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: var(--bg-primary);
             color: #fff;
         }
 
@@ -1843,7 +1843,21 @@
         .resume-title {
             font-size: var(--font-size-2xl);
             font-weight: 800;
-            margin-bottom: var(--spacing-xs);
+            margin-bottom: var(--spacing-lg);
+            text-align: center;
+            position: relative;
+        }
+
+        .resume-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
         }
 
         .resume-sub {
@@ -1860,8 +1874,21 @@
         }
 
         .btn-light {
-            background: #ffffff;
-            color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .btn-light:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-light:active {
+            transform: translateY(0);
         }
 
         @media (max-width: 768px) {
@@ -1892,11 +1919,10 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#experience">Experience</a></li>
-
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
-
-                    <!-- <li><a href="#resume">Resume</a></li> -->
+                    <li><a href="#certificates">Certifications</a></li>
+                    <li><a href="#resume">Resume</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
 
@@ -2060,7 +2086,7 @@
             </p>
 
             <div class="skills-grid">
-                <!-- Frontend Development -->
+                <!-- 7Frontend Development -->
                 <div class="skill-card">
                     <div class="skill-header">
                         <div class="skill-icon">💻</div>
@@ -2181,8 +2207,8 @@
                             Features smooth animations and a clean design.
                         </p>
                         <div class="project-tech">
-                            <span class="tech-badge">HTML5</span>
-                            <span class="tech-badge">CSS3</span>
+                            <span class="tech-badge">HTML</span>
+                            <span class="tech-badge">CSS</span>
                         </div>
                         <div class="project-cta">
                             <a href="https://amiamazon-clone.netlify.app/" target="_blank" class="view-project-btn">View
@@ -2208,8 +2234,8 @@
                             visuals and playful energy make it fun for all ages.
                         </p>
                         <div class="project-tech">
-                            <span class="tech-badge">HTML5</span>
-                            <span class="tech-badge">CSS3</span>
+                            <span class="tech-badge">HTML</span>
+                            <span class="tech-badge">CSS</span>
                         </div>
                         <div class="project-cta">
                             <a href="#" class="view-project-btn">View Project →</a>
@@ -2333,19 +2359,14 @@
             <h2 class="section-title">Certifications</h2>
             <div class="cert-grid">
                 <div class="cert-card">
-                    <div class="cert-title">Responsive Web Design</div>
-                    <div class="cert-issuer">freeCodeCamp • 2024</div>
-                    <span class="cert-badge">Credential ID: FCC-RWD-12345</span>
+                    <div class="cert-title">MUC-Techno 2K25 </div>
+                    <div class="cert-issuer">Inter College Competition</div>
+                    <div class="cert-issuer">Web-Deveopnment - 1st</div>
                 </div>
                 <div class="cert-card">
-                    <div class="cert-title">JavaScript Algorithms and Data Structures</div>
-                    <div class="cert-issuer">freeCodeCamp • 2024</div>
-                    <span class="cert-badge">Credential ID: FCC-JS-67890</span>
-                </div>
-                <div class="cert-card">
-                    <div class="cert-title">Introduction to Databases</div>
-                    <div class="cert-issuer">Coursera • 2023</div>
-                    <span class="cert-badge">Credential ID: COURS-DB-2023</span>
+                    <div class="cert-title">Nuronex 2K25</div>
+                    <div class="cert-issuer">Inter College Competition</div>
+                    <div class="cert-issuer">Web-Deveopnment - 2dn</div>
                 </div>
             </div>
         </div>
