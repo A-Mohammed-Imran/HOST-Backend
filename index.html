@@ -1635,9 +1635,9 @@
             justify-content: space-between;
             align-items: center;
             padding-top: var(--spacing-md);
+            padding-bottom: var(--spacing-md);
             flex-wrap: wrap;
             gap: var(--spacing-sm);
-            height: 120px;
         }
 
         .footer-copyright {
@@ -1718,7 +1718,6 @@
             }
 
             .footer-bottom {
-                flex-direction: column;
                 text-align: center;
             }
 
@@ -1727,6 +1726,22 @@
                 right: 20px;
                 width: 45px;
                 height: 45px;
+            }
+        }
+
+        /* Fix footer links bottom section on small mobile screens */
+        @media (max-width: 425px) {
+            .footer-links-bottom {
+                flex-direction: column;
+                align-items: center;
+                gap: var(--spacing-xs);
+                width: 100%;
+            }
+
+            .footer-links-bottom .footer-link {
+                white-space: nowrap;
+                word-break: keep-all;
+                overflow-wrap: normal;
             }
         }
 
@@ -2094,7 +2109,7 @@
         <div class="hero-content">
             <p class="hero-greeting">👋 Hello, I'm</p>
             <h1 class="hero-name">A Mohammed <span class="highlight">Imran</span></h1>
-            <p class="hero-subtitle">Under Graduate Science | Web Developer</p>
+            <p class="hero-subtitle">Pursuing Computer Science | Web Developer</p>
             <p class="hero-description">
                 Passionate about creating beautiful, functional, and user-friendly web experiences.
                 Specializing in front-end development with modern technologies.
