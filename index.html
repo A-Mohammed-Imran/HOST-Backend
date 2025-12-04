@@ -153,12 +153,15 @@
             justify-content: space-between;
             align-items: center;
             padding: var(--spacing-sm) 0;
+            min-height: 60px;
         }
 
         .logo {
             font-size: var(--font-size-xl);
             font-weight: 700;
             position: relative;
+            flex-shrink: 0;
+            white-space: nowrap;
         }
 
         /* Logo image swap without changing layout */
@@ -215,6 +218,8 @@
             background: none;
             border: none;
             padding: var(--spacing-xs);
+            flex-shrink: 0;
+            margin-left: var(--spacing-sm);
         }
 
         .menu-toggle span {
@@ -240,6 +245,7 @@
             transition: all var(--transition-speed) ease;
             font-size: 1.2rem;
             margin-left: var(--spacing-sm);
+            flex-shrink: 0;
         }
 
         .theme-toggle:hover {
@@ -264,33 +270,189 @@
             transform: rotate(-45deg) translate(7px, -6px);
         }
 
-        /* Responsive Navigation */
+        /* Desktop Navigation Styles */
+        @media (min-width: 769px) {
+            .nav-menu {
+                display: flex !important;
+                position: static !important;
+                width: auto !important;
+                height: auto !important;
+                background: transparent !important;
+                padding: 0 !important;
+                gap: var(--spacing-md);
+                z-index: auto !important;
+                overflow: visible !important;
+                transform: none !important;
+                opacity: 1 !important;
+                pointer-events: auto !important;
+                transition: none;
+                list-style: none;
+                flex-direction: row;
+            }
+
+            .nav-menu li {
+                display: list-item;
+                list-style: none;
+                border: none !important;
+            }
+
+            .nav-menu li a {
+                display: inline;
+                padding: 0 !important;
+                font-size: var(--font-size-base);
+                font-weight: 500;
+                color: var(--nav-text);
+            }
+
+            .nav-menu li a::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                transition: width var(--transition-speed) ease;
+            }
+
+            .nav-menu li a:hover {
+                color: var(--primary-color);
+            }
+
+            .nav-menu li a:hover::after {
+                width: 100%;
+            }
+
+            .nav-header {
+                display: none !important;
+            }
+
+            .nav-footer {
+                display: none !important;
+            }
+
+            .nav-close {
+                display: none !important;
+            }
+
+            .menu-toggle {
+                display: none !important;
+            }
+        }
+
+        /* Medium Screens (Tablets) - Prevent Overlap */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .nav-menu {
+                gap: var(--spacing-sm) !important;
+            }
+
+            .nav-menu li a {
+                font-size: 0.875rem !important;
+                white-space: nowrap;
+            }
+
+            .container {
+                padding: 0 var(--spacing-sm);
+            }
+        }
+
+        /* Mobile Navigation Styles */
         @media (max-width: 768px) {
+            header {
+                padding: 0 var(--spacing-md);
+            }
+
+            nav {
+                min-height: 50px;
+                padding: var(--spacing-xs) 0;
+            }
+
+            .logo {
+                font-size: var(--font-size-lg);
+                flex: 1;
+            }
+
             .menu-toggle {
                 display: flex;
             }
 
             .nav-menu {
-                position: absolute;
-                top: 100%;
+                position: fixed;
+                top: 0;
                 left: 0;
                 width: 100%;
+                height: 100vh;
+                background: var(--bg-primary);
                 flex-direction: column;
-                background: var(--header-bg);
-                backdrop-filter: blur(10px);
-                padding: var(--spacing-md);
-                gap: var(--spacing-sm);
-                box-shadow: 0 5px 15px var(--shadow-color);
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height var(--transition-speed) ease;
+                padding: var(--spacing-lg);
+                gap: 0;
                 z-index: 1001;
-                will-change: max-height;
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+                transition: transform 0.3s ease, opacity 0.3s ease;
+                overflow-y: auto;
+                margin: 0;
             }
 
             .nav-menu.active {
-                max-height: 80vh;
-                overflow-y: auto;
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            .nav-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: var(--spacing-lg);
+                border-bottom: 1px solid var(--border-color);
+                padding-bottom: var(--spacing-md);
+                padding-top: var(--spacing-sm);
+            }
+
+            .nav-logo {
+                font-size: var(--font-size-lg);
+                font-weight: 700;
+                color: var(--text-heading);
+                flex: 1;
+                padding-right: var(--spacing-md);
+            }
+
+            .nav-close {
+                background: none;
+                border: none;
+                font-size: 24px;
+                color: var(--text-primary);
+                cursor: pointer;
+                padding: var(--spacing-xs);
+                flex-shrink: 0;
+                line-height: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+            }
+
+            .nav-close:hover {
+                color: var(--primary-color);
+            }
+
+            .nav-menu li {
+                list-style: none;
+            }
+
+            .nav-menu li:not(.nav-header):not(.nav-footer) a {
+                display: block;
+                padding: var(--spacing-sm) 0;
+                font-size: var(--font-size-base);
+                color: var(--text-primary);
+            }
+
+            .nav-footer {
+                margin-top: auto;
+                padding-top: var(--spacing-lg);
             }
 
             .nav-menu a::after {
@@ -2076,6 +2238,12 @@
                 <a href="#" class="logo">Imran</a>
 
                 <ul class="nav-menu">
+                    <li class="nav-header">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-lg);">
+                            <span class="nav-logo">Imran</span>
+                            <button class="nav-close" aria-label="Close menu">✕</button>
+                        </div>
+                    </li>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#education">Education</a></li>
@@ -2085,6 +2253,9 @@
                     <li><a href="#certificates">Certifications</a></li>
                     <li><a href="#resume">Resume</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li class="nav-footer">
+                        <a href="#projects" class="btn btn-primary" style="width: 100%; text-align: center;">View My Work</a>
+                    </li>
                 </ul>
 
                 <div style="display: flex; align-items: center;">
@@ -2790,6 +2961,14 @@
         // ===== MOBILE MENU TOGGLE =====
         const menuToggle = document.querySelector('.menu-toggle');
         const navMenu = document.querySelector('.nav-menu');
+        const navClose = document.querySelector('.nav-close');
+
+        const closeMenu = () => {
+            menuToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+        };
 
         menuToggle.addEventListener('click', () => {
             const isOpen = !navMenu.classList.contains('active');
@@ -2799,13 +2978,15 @@
             menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         });
 
+        // Close menu with close button
+        if (navClose) {
+            navClose.addEventListener('click', closeMenu);
+        }
+
         // Close menu when clicking on a link
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                navMenu.classList.remove('active');
-                document.body.classList.remove('menu-open');
-                menuToggle.setAttribute('aria-expanded', 'false');
+                closeMenu();
             });
         });
 
