@@ -342,17 +342,50 @@
 
         /* Medium Screens (Tablets) - Prevent Overlap */
         @media (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                padding: 0 var(--spacing-sm);
+                max-width: 100%;
+            }
+
+            nav {
+                padding: var(--spacing-xs) 0;
+            }
+
+            .logo {
+                font-size: var(--font-size-lg);
+                margin-right: var(--spacing-xs);
+            }
+
             .nav-menu {
-                gap: var(--spacing-sm) !important;
+                gap: 0.5rem !important;
+                flex-wrap: nowrap;
             }
 
             .nav-menu li a {
-                font-size: 0.875rem !important;
+                font-size: 0.813rem !important;
                 white-space: nowrap;
+                padding: 0 !important;
             }
 
-            .container {
-                padding: 0 var(--spacing-sm);
+            .theme-toggle {
+                width: 36px;
+                height: 36px;
+                margin-left: 0.5rem;
+            }
+        }
+
+        /* Extra adjustment for smaller tablets */
+        @media (min-width: 769px) and (max-width: 900px) {
+            .nav-menu {
+                gap: 0.4rem !important;
+            }
+
+            .nav-menu li a {
+                font-size: 0.75rem !important;
+            }
+
+            .logo {
+                font-size: 1.125rem;
             }
         }
 
